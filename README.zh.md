@@ -1,13 +1,13 @@
-# Agent Docs OS
+# Helm
 
-[![npm version](https://img.shields.io/npm/v/agent-docs-init.svg)](https://www.npmjs.com/package/agent-docs-init)
-[![npm downloads](https://img.shields.io/npm/dm/agent-docs-init.svg)](https://www.npmjs.com/package/agent-docs-init)
+[![npm version](https://img.shields.io/npm/v/@helmdocs/init.svg)](https://www.npmjs.com/package/@helmdocs/init)
+[![npm downloads](https://img.shields.io/npm/dm/@helmdocs/init.svg)](https://www.npmjs.com/package/@helmdocs/init)
 [![GitHub stars](https://img.shields.io/github/stars/Rengod95/agent-docs-os.svg)](https://github.com/Rengod95/agent-docs-os)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [English](README.md) | [한국어](README.ko.md)
 
-> 面向 AI 编程代理的文档驱动操作系统。
+> 用文档掌舵你的代理。面向 AI 编程代理的文档驱动操作系统。
 
 ---
 
@@ -64,7 +64,7 @@ Agent Docs OS 是一个目录结构，用于控制 AI 代理在项目中的工�
 ### 交互模式（推荐）
 
 ```bash
-npx agent-docs-init
+npx @helmdocs/init
 ```
 
 ```
@@ -84,13 +84,13 @@ npx agent-docs-init
 ### 非交互模式
 
 ```bash
-npx agent-docs-init --yes --dir=agent_docs --agent="Claude Code"
+npx @helmdocs/init --yes --dir=agent_docs --agent="Claude Code"
 ```
 
 ### Shell 后备方案（无 Node.js）
 
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/Rengod95/agent-docs-os/main/packages/agent-docs-init/bin/init.sh)
+bash <(curl -sL https://raw.githubusercontent.com/Rengod95/agent-docs-os/main/packages/@helmdocs/init/bin/init.sh)
 ```
 
 ## 支持的代理
@@ -169,7 +169,7 @@ agent_docs/
 
 1. Fork 仓库
 2. 创建 feature 分支
-3. 在 `packages/agent-docs-init/` 中进行更改
+3. 在 `packages/@helmdocs/init/` 中进行更改
 4. 测试：`node src/onboard.mjs --yes`
 5. 提交 PR
 

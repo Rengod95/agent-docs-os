@@ -1,13 +1,13 @@
-# Agent Docs OS
+# Helm
 
-[![npm version](https://img.shields.io/npm/v/agent-docs-init.svg)](https://www.npmjs.com/package/agent-docs-init)
-[![npm downloads](https://img.shields.io/npm/dm/agent-docs-init.svg)](https://www.npmjs.com/package/agent-docs-init)
+[![npm version](https://img.shields.io/npm/v/@helmdocs/init.svg)](https://www.npmjs.com/package/@helmdocs/init)
+[![npm downloads](https://img.shields.io/npm/dm/@helmdocs/init.svg)](https://www.npmjs.com/package/@helmdocs/init)
 [![GitHub stars](https://img.shields.io/github/stars/Rengod95/agent-docs-os.svg)](https://github.com/Rengod95/agent-docs-os)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [한국어](README.ko.md) | [中文](README.zh.md)
 
-> A docs-driven operating system for AI coding agents.
+> Helm your agents with docs. A docs-driven operating system for AI coding agents.
 
 ---
 
@@ -65,7 +65,7 @@ Think of it as an OS for your AI agent:
 ### Interactive (recommended)
 
 ```bash
-npx agent-docs-init
+npx @helmdocs/init
 ```
 
 ```
@@ -85,13 +85,13 @@ npx agent-docs-init
 ### Non-interactive
 
 ```bash
-npx agent-docs-init --yes --dir=agent_docs --agent="Claude Code"
+npx @helmdocs/init --yes --dir=agent_docs --agent="Claude Code"
 ```
 
 ### Shell fallback (no Node.js)
 
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/Rengod95/agent-docs-os/main/packages/agent-docs-init/bin/init.sh)
+bash <(curl -sL https://raw.githubusercontent.com/Rengod95/agent-docs-os/main/packages/@helmdocs/init/bin/init.sh)
 ```
 
 ## Supported Agents
@@ -170,7 +170,7 @@ Update state/current.yaml → Update decisions/decision-log.md → Update featur
 
 1. Fork the repo
 2. Create a feature branch
-3. Make changes in `packages/agent-docs-init/`
+3. Make changes in `packages/@helmdocs/init/`
 4. Test: `node src/onboard.mjs --yes`
 5. Submit a PR
 

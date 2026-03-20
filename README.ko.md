@@ -1,13 +1,13 @@
-# Agent Docs OS
+# Helm
 
-[![npm version](https://img.shields.io/npm/v/agent-docs-init.svg)](https://www.npmjs.com/package/agent-docs-init)
-[![npm downloads](https://img.shields.io/npm/dm/agent-docs-init.svg)](https://www.npmjs.com/package/agent-docs-init)
+[![npm version](https://img.shields.io/npm/v/@helmdocs/init.svg)](https://www.npmjs.com/package/@helmdocs/init)
+[![npm downloads](https://img.shields.io/npm/dm/@helmdocs/init.svg)](https://www.npmjs.com/package/@helmdocs/init)
 [![GitHub stars](https://img.shields.io/github/stars/Rengod95/agent-docs-os.svg)](https://github.com/Rengod95/agent-docs-os)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [English](README.md) | [中文](README.zh.md)
 
-> AI 코딩 에이전트를 위한 문서 기반 운영 체계.
+> 문서로 에이전트를 조종하라. AI 코딩 에이전트를 위한 문서 기반 운영 체계.
 
 ---
 
@@ -64,7 +64,7 @@ AI 에이전트를 위한 OS라고 생각하면 됩니다:
 ### 대화형 (권장)
 
 ```bash
-npx agent-docs-init
+npx @helmdocs/init
 ```
 
 ```
@@ -84,13 +84,13 @@ npx agent-docs-init
 ### 비대화형
 
 ```bash
-npx agent-docs-init --yes --dir=agent_docs --agent="Claude Code"
+npx @helmdocs/init --yes --dir=agent_docs --agent="Claude Code"
 ```
 
 ### Shell 폴백 (Node.js 없는 환경)
 
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/Rengod95/agent-docs-os/main/packages/agent-docs-init/bin/init.sh)
+bash <(curl -sL https://raw.githubusercontent.com/Rengod95/agent-docs-os/main/packages/@helmdocs/init/bin/init.sh)
 ```
 
 ## 지원 에이전트
@@ -169,7 +169,7 @@ state/current.yaml 갱신 → decisions/decision-log.md 갱신 → feature의 cu
 
 1. 저장소 포크
 2. Feature 브랜치 생성
-3. `packages/agent-docs-init/` 에서 변경
+3. `packages/@helmdocs/init/` 에서 변경
 4. 테스트: `node src/onboard.mjs --yes`
 5. PR 제출
 

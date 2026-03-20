@@ -1,10 +1,10 @@
 {
-  "name": "agent-docs-init",
+  "name": "@helmdocs/init",
   "version": "1.0.0",
   "description": "Scaffold a docs-driven agent operating system for any project",
   "type": "module",
   "bin": {
-    "agent-docs-init": "./bin/init.sh"
+    "helmdocs-init": "./bin/init.sh"
   },
   "files": [
     "bin/",

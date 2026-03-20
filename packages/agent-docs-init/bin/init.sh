@@ -14,7 +14,7 @@ NC='\033[0m'
 print_banner() {
   echo ""
   echo -e "${BOLD}─────────────────────────────────${NC}"
-  echo -e "${BOLD}  Agent Docs OS Initializer${NC}"
+  echo -e "${BOLD}  Helm — Agent Docs OS${NC}"
   echo -e "${BOLD}─────────────────────────────────${NC}"
   echo ""
 }
@@ -89,5 +89,5 @@ echo -e "${GREEN}✓${NC} $DOCS_DIR/ structure created"
 echo -e "${GREEN}✓${NC} Scaffold version: v1.0.0"
 echo ""
 echo -e "${CYAN}Note:${NC} For interactive onboarding (agent selection, bootstrap injection),"
-echo "      install Node.js and run: npx agent-docs-init"
+echo "      install Node.js and run: npx @helmdocs/init"
 echo ""

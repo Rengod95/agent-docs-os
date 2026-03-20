@@ -87,7 +87,7 @@ const MARKER_END = "<!-- agent-docs-os:end -->";
 function printBanner() {
   console.log("");
   console.log("─────────────────────────────────");
-  console.log("  Agent Docs OS Initializer");
+  console.log("  Helm — Agent Docs OS");
   console.log("─────────────────────────────────");
   console.log("");
 }
