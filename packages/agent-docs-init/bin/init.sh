@@ -29,8 +29,13 @@ fi
 
 print_banner
 
-# ─── Try Node.js handoff ───
-if command -v node &>/dev/null; then
+# ─── Try Node.js handoff (skip with --shell-only) ───
+SHELL_ONLY=false
+for arg in "$@"; do
+  [ "$arg" = "--shell-only" ] && SHELL_ONLY=true
+done
+
+if [ "$SHELL_ONLY" = false ] && command -v node &>/dev/null; then
   if [ -f "$PKG_DIR/src/onboard.mjs" ]; then
     exec node "$PKG_DIR/src/onboard.mjs" "$@"
   fi
@@ -40,7 +45,11 @@ fi
 echo -e "${CYAN}Node.js not found. Running basic shell init.${NC}"
 echo ""
 
-DOCS_DIR="${1:-agent_docs}"
+# Parse positional arg (skip flags)
+DOCS_DIR="agent_docs"
+for arg in "$@"; do
+  case "$arg" in --*) ;; *) DOCS_DIR="$arg"; break ;; esac
+done
 
 if [ -z "$TEMPLATES_DIR" ]; then
   echo -e "${RED}Error: templates directory not found.${NC}"

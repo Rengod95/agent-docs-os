@@ -29,7 +29,7 @@ jobs:
         run: |
           mkdir -p /tmp/test-shell
           cd /tmp/test-shell
-          bash $GITHUB_WORKSPACE/packages/agent-docs-init/bin/init.sh
+          bash $GITHUB_WORKSPACE/packages/agent-docs-init/bin/init.sh --shell-only
           test -f agent_docs/README.md
           test -f agent_docs/state/current.yaml.template
           test -f agent_docs/features/_feature-template/current.md.template
