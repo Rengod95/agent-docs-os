@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        working-directory: packages/agent-docs-init
+        run: npm ci
+
+      - name: Test shell fallback
+        run: |
+          mkdir -p /tmp/test-shell
+          cd /tmp/test-shell
+          bash $GITHUB_WORKSPACE/packages/agent-docs-init/bin/init.sh
+          test -f agent_docs/README.md
+          test -f agent_docs/state/current.yaml.template
+          test -f agent_docs/features/_feature-template/current.md.template
+          test -f agent_docs/.scaffold-version
+          echo "Shell fallback: OK"
+
+      - name: Test Node onboarding (non-interactive)
+        run: |
+          mkdir -p /tmp/test-node
+          cd /tmp/test-node
+          node $GITHUB_WORKSPACE/packages/agent-docs-init/src/onboard.mjs --yes --dir=my_docs --agent="Claude Code"
+          test -f my_docs/README.md
+          test -f my_docs/.scaffold-version
+          test -f CLAUDE.md
+          grep -q "agent-docs-os:start" CLAUDE.md
+          echo "Node onboarding (Claude Code): OK"
+
+      - name: Test Cursor fragment
+        run: |
+          mkdir -p /tmp/test-cursor
+          cd /tmp/test-cursor
+          node $GITHUB_WORKSPACE/packages/agent-docs-init/src/onboard.mjs --yes --agent="Cursor"
+          test -f .cursor/rules/agent-docs.mdc
+          head -1 .cursor/rules/agent-docs.mdc | grep -q "^---"
+          echo "Cursor fragment: OK"
+
+      - name: Test idempotency
+        run: |
+          mkdir -p /tmp/test-idem
+          cd /tmp/test-idem
+          node $GITHUB_WORKSPACE/packages/agent-docs-init/src/onboard.mjs --yes
+          node $GITHUB_WORKSPACE/packages/agent-docs-init/src/onboard.mjs --yes
+          count=$(grep -c "agent-docs-os:start" CLAUDE.md)
+          test "$count" -eq 1
+          echo "Idempotency: OK (marker count: $count)"
+
+      - name: Test all agents
+        run: |
+          for agent in "Codex CLI" "Windsurf" "GitHub Copilot" "Cline" "Aider"; do
+            rm -rf /tmp/test-agent && mkdir -p /tmp/test-agent && cd /tmp/test-agent
+            node $GITHUB_WORKSPACE/packages/agent-docs-init/src/onboard.mjs --yes --agent="$agent"
+            test -f agent_docs/README.md
+            echo "$agent: OK"
+          done

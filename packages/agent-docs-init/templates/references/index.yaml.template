@@ -1,0 +1,27 @@
+documents:
+  - id: product.sample-doc
+    title: "Sample Product Document"
+    kind: product
+    path: product/sample-product.md
+    tags:
+      - kind:product
+      - topic:requirements
+
+  - id: architecture.sample-doc
+    title: "Sample Architecture Document"
+    kind: architecture
+    path: architecture/sample-architecture.md
+    tags:
+      - kind:architecture
+      - topic:layers
+      - intent:refactor
+      - scope:multi-feature
+
+  - id: external.sample-doc
+    title: "Sample External Reference"
+    kind: external
+    path: external/sample-external-reference.md
+    tags:
+      - kind:external
+      - topic:react-query
+      - intent:plan

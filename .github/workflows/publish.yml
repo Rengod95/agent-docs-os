@@ -1,0 +1,47 @@
+name: Publish to npm
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        working-directory: packages/agent-docs-init
+        run: npm ci
+
+      - name: Verify package
+        working-directory: packages/agent-docs-init
+        run: |
+          npm pack --dry-run
+          echo "Package contents verified"
+
+      - name: Run tests before publish
+        run: |
+          mkdir -p /tmp/test-prepublish
+          cd /tmp/test-prepublish
+          node $GITHUB_WORKSPACE/packages/agent-docs-init/src/onboard.mjs --yes
+          test -f agent_docs/README.md
+          test -f CLAUDE.md
+          echo "Pre-publish test: OK"
+
+      - name: Publish
+        working-directory: packages/agent-docs-init
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

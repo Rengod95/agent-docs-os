@@ -1,0 +1,11 @@
+id: sample-feature
+title: Sample Feature
+status: active
+importance: medium
+complexity: medium
+primary_paths:
+  - apps/web/path/to/sample-feature
+related_references:
+  - architecture.sample-doc
+related_features: []
+related_adrs: []

@@ -1,0 +1,49 @@
+# Current
+
+## Task Profile
+- intent: plan | investigate | fix | change | add | refactor | govern
+- scope: single-feature | multi-feature | cross-cutting | global
+- primary_feature: sample-feature
+- secondary_features:
+  - other-feature
+
+## Goal
+- 이번 작업의 목표
+
+## Scope
+- 포함:
+  - ...
+- 제외:
+  - ...
+
+## Required Docs
+- README.md
+- decisions.md
+
+## Optional Docs
+- ../../decisions/ADR-0001-sample.md
+- ../../references/sample-architecture.md
+
+## Working Docs
+- workspace/plan.md
+- workspace/actions.md
+
+## Exit Updates
+- ../../state/current.yaml
+- ../../decisions/decision-log.md
+- README.md
+
+## Progress
+- 완료:
+  - ...
+- 남은 것:
+  - ...
+
+## Risks
+- ...
+
+## Next Step
+- 다음 세션의 첫 액션
+
+## Last Updated
+- YYYY-MM-DD HH:mm

@@ -1,0 +1,9 @@
+# Feature Decisions
+
+## YYYY-MM-DD
+- 결정:
+  - feature 내부에서 내린 판단
+- 이유:
+  - 왜 이렇게 했는지
+- 관련 작업:
+  - `plan`, `fix`, `refactor` 등

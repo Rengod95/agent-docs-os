@@ -1,0 +1,26 @@
+# Sample Feature
+
+## TL;DR
+- 이 feature가 무엇을 하는지 짧게 적는다.
+
+## Scope
+- 포함 범위
+- 제외 범위
+
+## Entry Points
+- apps/web/path/to/file.ts
+
+## Main Flow
+- 핵심 흐름을 짧게 적는다.
+
+## Known Risks
+- 자주 깨지는 지점
+
+## Related References
+- ../../references/sample-architecture.md
+
+## Related Decisions
+- ../../decisions/ADR-0001-sample.md
+
+## Related Features
+- other-feature

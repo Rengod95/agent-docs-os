@@ -1,0 +1,49 @@
+{
+  "name": "agent-docs-init",
+  "version": "1.0.0",
+  "description": "Scaffold a docs-driven agent operating system for any project",
+  "type": "module",
+  "bin": {
+    "agent-docs-init": "./bin/init.sh"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "templates/",
+    "fragments/"
+  ],
+  "scripts": {
+    "start": "node src/onboard.mjs",
+    "test": "node src/onboard.mjs --yes"
+  },
+  "dependencies": {
+    "inquirer": "^12.0.0"
+  },
+  "keywords": [
+    "agent",
+    "docs",
+    "scaffold",
+    "ai",
+    "claude",
+    "codex",
+    "cursor",
+    "windsurf",
+    "cline",
+    "copilot",
+    "aider"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rengod95/agent-docs-os.git",
+    "directory": "packages/agent-docs-init"
+  },
+  "homepage": "https://github.com/Rengod95/agent-docs-os#readme",
+  "bugs": {
+    "url": "https://github.com/Rengod95/agent-docs-os/issues"
+  },
+  "author": "leein",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}

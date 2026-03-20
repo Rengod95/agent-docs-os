@@ -1,0 +1,11 @@
+active_features:
+  - sample-feature
+primary_feature: sample-feature
+hot_files:
+  - apps/web/path/to/file.ts
+active_risks:
+  - "Describe the current risk."
+next_actions:
+  - "Describe the next concrete action."
+latest_checkpoint: checkpoints/YYYY-MM-DD-sample.md
+last_verified_at: YYYY-MM-DD
